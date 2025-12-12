@@ -37,6 +37,7 @@ Your task:
 6. Suggest practical steps to move toward resolution without taking sides.
 
 Respond in a calm, structured, and supportive tone.
+Keep the total response under 500 words and ensure all sections are complete.
 """
 
         response = openai.chat.completions.create(
@@ -47,4 +48,5 @@ Respond in a calm, structured, and supportive tone.
 
         output = response.choices[0].message.content
         st.subheader("Mediator Response")
-        st.write(output)
+        with st.expander("View full mediation response", expanded=True):
+            st.markdown(output)
