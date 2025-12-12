@@ -45,6 +45,6 @@ Respond in a calm, structured, and supportive tone.
             max_tokens=600
         )
 
-        output = response.choices[0].message["content"]
+        output = response.choices[0].message.content
         st.subheader("Mediator Response")
         st.write(output)
